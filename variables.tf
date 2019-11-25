@@ -187,3 +187,8 @@ variable "use_num_suffix" {
   default     = false
 }
 
+variable "ignore_changes" {
+  description = "Prevent resource to be destroy when configuration change (ami, user_data)"
+  type = list 
+  default = [ "ami" ]
+}
