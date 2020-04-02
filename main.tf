@@ -27,7 +27,7 @@ resource "aws_instance" "this" {
   ebs_optimized = var.ebs_optimized
 
   lifecycle {
-     ignore_changes = [ "ami", "user_data" ] 
+     ignore_changes = [ ami, user_data, key_name ]
   }
 
 
