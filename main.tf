@@ -83,14 +83,14 @@ resource "aws_instance" "this" {
 
   tags = merge(
     {
-      "Name" = var.instance_count > 1 || var.use_num_suffix ? format("%s-%d", var.name, count.index + 1) : var.name
+      "Name" = var.instance_count > 1 || var.use_num_suffix ? format("%s-%d", var.name, count.index + 1) : "${var.name}-1"
     },
     var.tags,
   )
 
   volume_tags = merge(
     {
-      "Name" = var.instance_count > 1 || var.use_num_suffix ? format("%s-%d", var.name, count.index + 1) : var.name
+      "Name" = var.instance_count > 1 || var.use_num_suffix ? format("%s-%d", var.name, count.index + 1) : "${var.name}-1"
     },
     var.volume_tags,
   )
